@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/projects", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/3pt", "destination": "/index.html" },
+    { "source": "/lunar", "destination": "/index.html" },
+    { "source": "/pit-ne", "destination": "/index.html" }
+  ]
+}
