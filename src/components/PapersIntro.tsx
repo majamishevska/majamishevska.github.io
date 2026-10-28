@@ -127,7 +127,7 @@ export function PapersIntro() {
             <span className="bg-[#e4e8dc] px-1.5 py-0.5 font-medium text-black">youth tech safety</span>.
           </p>
           <p className="mt-5 font-mono text-sm leading-relaxed text-neutral-800 sm:text-[15px]">
-            Last summer, I worked in San Francisco as an SDE Intern{' '}
+            I previously worked in San Francisco as an SDE Intern{' '}
             <span className="bg-[#e8e8e8] px-1.5 py-0.5 font-mono text-[13px] leading-relaxed text-black sm:text-sm">
               @ Amazon
             </span>

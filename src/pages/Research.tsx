@@ -80,8 +80,10 @@ function ResearchEntries({ entries }: { entries: Paper[] }) {
                           : ", ")}
                       {person.href ? (
                         <TextLink href={person.href}>{person.name}</TextLink>
-                      ) : (
+                      ) : person.name === "Maja Mishevska" ? (
                         <strong className="font-semibold">{person.name}</strong>
+                      ) : (
+                        person.name
                       )}
                     </Fragment>
                   ))}
@@ -168,7 +170,7 @@ export function Research() {
               <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
                 <h1 className={heading}>Maja Mishevska</h1>
               </div>
-              <p className="mt-2 font-mono text-[11px] leading-relaxed text-neutral-500 sm:text-xs">
+              <p className="mt-1 font-mono text-[11px] leading-snug text-neutral-500 sm:text-xs">
                 CS + GNSS @ Brown ’27 · Former SDE Intern @ AWS
               </p>
               <div className={`mt-6 ${copy}`}>
@@ -180,13 +182,14 @@ export function Research() {
                   >
                     Maja
                   </strong>
-                  , a researcher, designer, and technologist studying intimacy
+                  , a researcher and creative technologist studying intimacy
                   and privacy in emerging technologies through the lens of{" "}
                   <span className="whitespace-nowrap bg-[#e4e8dc] px-1.5 py-0.5 font-medium text-black">
                     gender and power
                   </span>
-                  . My current work examines AI-generated intimate imagery and
-                  how AI systems account for privacy in vulnerable contexts.
+                  . My current work covers the tech ecosystem powering deepfake
+                  abuse, AI-mediated help-seeking among marginalized communities,
+                  and youth online safety.
                 </p>
               </div>
               <div className={`mt-5 ${copy}`}>
@@ -195,11 +198,11 @@ export function Research() {
                   <TextLink href="https://dfreed.me/">Diana Freed’s</TextLink>{" "}
                   SWRL lab and work with Brown’s{" "}
                   <TextLink href="https://cntr.brown.edu/">CNTR</TextLink>. I’ve
-                  also served as a TA and Head TA for{" "}
+                  also been a Teaching Assistant for{" "}
                   <TextLink href="https://cs.brown.edu/courses/info/csci1302/">
                     CSCI1302
                   </TextLink>{" "}
-                  for four semesters (half of my time at Brown)! I’m pursuing a
+                  for four semesters (half of my time at college)! I’m pursuing a
                   BS in Computer Science and a BA in Gender and Sexuality
                   Studies at Brown University, always finding ways to put the two{" "}
                   <span className="whitespace-nowrap bg-[#e4e8dc] px-1.5 py-0.5 font-medium text-black">

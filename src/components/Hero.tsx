@@ -1,30 +1,11 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import { documents } from '../data/documents'
+import { nameAscii } from '../data/ascii'
 
 const LINKEDIN_URL = 'https://www.linkedin.com/in/maja-mishevska/'
 
 const ease = { type: 'spring' as const, damping: 30, stiffness: 320 }
-
-const nameAscii = String.raw`                                                   
-        ████  ████ ██      ████                                             
-      ██    ██   ███     ██                                                 
-      ██        ██     ██  ██                                               
-        ██    ██  ██   ██  ██                                               
-              ██  ██  █    ██                                               
-            ██    ██  █    ██        ██████  ██     ██        █████  ██     
-            ██   █   █   ██        ██      ██               ██     ██       
-      ██    ██   █  █    ██       █        ██     ████    ██       ██       
-    ██    ██     █ █   ██        ██      ██         ██    ██     ██         
-    ██    ██     ███   ██    ██  ██    ██           ██    ██   ██           
-      ████               ████      ████  ██       ██        ███  ██        
-                                                  ██                        
-                                                  ██                        
-                                                ██                          
-                                                ██                          
-                                        ██    ██                            
-                                          ████                                                           
-`
 
 function CursorTerm({
   label,

@@ -81,6 +81,11 @@ export const papers: Paper[] = [
       'Structured Gains, Unstructured Risks: The Dual Impact of AI for Youth with ADHD',
     detail:
       'Mateo Campoverde-Fordon, Maja Mishevska, and Diana Freed',
+    contributors: [
+      { name: 'Mateo Campoverde-Fordon', href: 'https://mateo.ooo/' },
+      { name: 'Maja Mishevska' },
+      { name: 'Diana Freed' },
+    ],
     // description: 'Argues for evaluating AI’s benefits and risks for youth with ADHD across structured and unstructured use, with privacy safeguards tailored to their needs.',
     venues: [{ label: 'Safe and Accessible AI for Youth with Disabilities and Neurodivergence — ASSETS Workshop', href: 'https://assets-conference.github.io/assets2026/' }],
     year: '2026',
