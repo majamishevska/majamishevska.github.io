@@ -8,7 +8,7 @@ export function Footer() {
         {nameAscii.trimEnd().split('\n').filter((line) => line.trim()).map((line) => line.trimEnd().slice(4)).join('\n')}
       </pre>
       <a href="#top" data-cursor-label="scroll" className="justify-self-end underline decoration-black/40 underline-offset-4 transition-colors duration-200 hover:bg-[#e4e8dc] hover:decoration-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black">
-        Back to top <span aria-hidden="true" className="font-sans">↑</span>
+        Back to top <span aria-hidden="true" className="text-icon font-sans">↑</span>
       </a>
     </footer>
   )

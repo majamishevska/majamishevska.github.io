@@ -1,3 +1,4 @@
+import { InlineLogo } from './InlineLogo'
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import { documents } from '../data/documents'
@@ -33,7 +34,7 @@ export function Hero({ aboutExpanded = false, research = false }: { aboutExpande
         <>
           {' '}At Brown’s{' '}
           <a href="https://cntr.brown.edu/" target="_blank" rel="noreferrer" data-cursor-label="open" className="underline underline-offset-4">
-            Center for Technological Responsibility, Reimagination, and Redesign (CNTR)
+            Center for Technological Responsibility <span className="whitespace-nowrap">(<InlineLogo name="cntr" side="left" />CNTR)</span>
           </a>
           , I connect human–computer interaction with gender studies to examine whose experiences shape technology and whose are overlooked.
         </>
@@ -46,7 +47,7 @@ export function Hero({ aboutExpanded = false, research = false }: { aboutExpande
         <>
           I’m a research assistant in Professor{' '}
           <a href="https://dfreed.me/" target="_blank" rel="noreferrer" data-cursor-label="open" className="underline underline-offset-4">Diana Freed’s</a>{' '}
-          Sociotechnical Systems and Wellbeing Research Lab (SWRL).{' '}
+          Sociotechnical Systems and Wellbeing Research Lab <span className="whitespace-nowrap">(<InlineLogo name="swrl" side="left" />SWRL)</span>.{' '}
           I study{' '}
           <span className="bg-[#e4e8dc] px-1.5 py-0.5 font-medium text-black">
             how AI shapes intimate experiences

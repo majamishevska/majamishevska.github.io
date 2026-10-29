@@ -1,3 +1,4 @@
+import { InlineLogo } from './InlineLogo'
 import { motion } from 'framer-motion'
 import { sampleProjects } from '../data/projects'
 import image2glyphPreview from '../assets/subprojects/image2glyph/image2glyph-preview.png'
@@ -129,7 +130,10 @@ export function Projects() {
         </ul>
         <div className={`pointer-events-none absolute inset-x-4 top-4 flex items-start justify-between gap-4 ${hasImage ? '-translate-y-2 opacity-0 transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100' : ''}`}>
           <span className="min-w-0 font-sans text-base font-semibold leading-tight tracking-tight text-black sm:text-lg">
+            {project.title === 'NCII Ecosystem' && <InlineLogo name="ncii" side="left" />}
+            {project.title === 'Socially Responsible Computing Handbook' && <InlineLogo name="srch" side="left" />}
             {project.title}
+            {project.title === 'CNTR AISLE' && <InlineLogo name="cntr" />}
           </span>
 
         </div>

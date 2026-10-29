@@ -41,3 +41,26 @@ body.custom-cursor-active [data-cursor-label] {
     scroll-behavior: auto;
   }
 }
+
+/* Paint one continuous line across linked text and its inline image. */
+a.underline:has(.inline-logo) {
+  text-decoration: none;
+  padding-bottom: 4px;
+  background-image: linear-gradient(rgb(0 0 0 / 0.4), rgb(0 0 0 / 0.4));
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position: left bottom;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+a.underline:has(.inline-logo):hover {
+  background-image: linear-gradient(#000, #000);
+}
+
+/* Center icons vertically beside text without changing their size. */
+.text-icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}

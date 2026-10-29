@@ -1,5 +1,8 @@
+import threePtIcon from "../assets/case-study/3pt/case-study/3pt-mono-logo.svg";
+import districtSixIcon from "../assets/case-study/d6/d6-logo.png";
+import { InlineLogo } from "../components/InlineLogo";
 import { Fragment, type ReactNode } from "react";
-import { FileText } from "lucide-react";
+import { FileText, Moon } from "lucide-react";
 import { WorldOfText } from "../components/WorldOfText";
 import { documents } from "../data/documents";
 import { papers, type Paper } from "../data/papers";
@@ -10,6 +13,10 @@ const heading =
   "font-sans text-base font-semibold leading-tight tracking-tight text-black sm:text-lg";
 const copy =
   "font-mono text-[13px] leading-relaxed text-neutral-800 sm:text-sm";
+const projectIcons: Record<string, string> = {
+  "privacy-period-tracker": threePtIcon,
+  "design-system": districtSixIcon,
+};
 const projectTopics: Record<string, string> = {
   "privacy-period-tracker": "Privacy",
   "health-companion": "Web design",
@@ -36,7 +43,7 @@ function TextLink({
     >
       {children}
       {arrow && (
-        <span aria-hidden="true" className="font-sans">
+        <span aria-hidden="true" className="text-icon font-sans">
           {"\u00a0"}↗
         </span>
       )}
@@ -58,6 +65,8 @@ function ResearchEntries({ entries }: { entries: Paper[] }) {
             </p>
           )}
           <h3 className="mt-1 font-sans text-base font-semibold leading-snug tracking-tight text-black">
+            {paper.id === "ncii-ecosystem" && <InlineLogo name="ncii" side="left" />}
+            {paper.id === "src-handbook" && <InlineLogo name="srch" side="left" />}
             {paper.href ? (
               <TextLink href={paper.href}>{paper.title}</TextLink>
             ) : (
@@ -196,8 +205,10 @@ export function Research() {
                 <p>
                   I’m a research assistant in Professor{" "}
                   <TextLink href="https://dfreed.me/">Diana Freed’s</TextLink>{" "}
-                  SWRL lab and work with Brown’s{" "}
-                  <TextLink href="https://cntr.brown.edu/">CNTR</TextLink>. I’ve
+                  Sociotechnical Systems and Wellbeing Research Lab <span className="whitespace-nowrap">(<InlineLogo name="swrl" side="left" />SWRL)</span> and work with Brown’s{" "}
+                  <TextLink href="https://cntr.brown.edu/">
+                    Center for Technological Responsibility <span className="whitespace-nowrap">(<InlineLogo name="cntr" side="left" />CNTR)</span>
+                  </TextLink>. I’ve
                   also been a Teaching Assistant for{" "}
                   <TextLink href="https://cs.brown.edu/courses/info/csci1302/">
                     CSCI1302
@@ -424,6 +435,20 @@ export function Research() {
                       className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-6"
                     >
                       <span className="min-w-0">
+                        {project.id === "health-companion" ? (
+                          <Moon
+                            aria-hidden="true"
+                            className="text-icon mr-1 h-4 w-4"
+                            fill="none"
+                          />
+                        ) : (
+                          <img
+                            src={projectIcons[project.id]}
+                            alt=""
+                            aria-hidden="true"
+                            className="text-icon mr-1 h-4 w-4 object-contain"
+                          />
+                        )}
                         <TextLink href={project.href}>{project.title}</TextLink>
                       </span>
                       <span className="shrink-0 text-right text-xs text-neutral-500">
