@@ -5,7 +5,7 @@ export const bowAscii = String.raw`                        █████      
       ██████          ██  ██████    ██████  ██          ██████
    ████    █████   ████                      ████   █████    ████
                █████                            █████
-`
+`;
 
 export const nameAscii = String.raw`
         ████  ████ ██      ████
@@ -25,4 +25,15 @@ export const nameAscii = String.raw`
                                                 ██
                                         ██    ██
                                           ████
-`
+`;
+
+export const sectionFlourishAscii = String.raw`                     
+           
+       ███████████
+    ███           ██.       █████
+  ██                ██.   ██     ██
+                     ██    ██    ██
+            ███       ██        ██
+          ██   ██   ██  ████████ 
+          ██       ██   
+            ███████`;

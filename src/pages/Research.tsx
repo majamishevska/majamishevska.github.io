@@ -1,3 +1,4 @@
+import { SectionFlourish } from "../components/SectionFlourish";
 import threePtIcon from "../assets/case-study/3pt/case-study/3pt-mono-logo.svg";
 import districtSixIcon from "../assets/case-study/d6/d6-logo.png";
 import { InlineLogo } from "../components/InlineLogo";
@@ -351,7 +352,7 @@ export function Research() {
           <div className="min-w-0 space-y-12">
             <section aria-labelledby="research-writing">
               <h2 id="research-writing" className={`scroll-mt-10 ${heading}`}>
-                Research & Writing
+                Research & Writing<SectionFlourish />
               </h2>
               <ResearchEntries
                 entries={papers.filter((paper) => !paper.category)}
@@ -366,7 +367,7 @@ export function Research() {
                 className="pointer-events-none absolute left-0 top-0 w-screen border-t border-[#74805f]"
               />
               <h2 id="research-resources" className={`scroll-mt-10 ${heading}`}>
-                Research Tools & Resources
+                Research Tools & Resources<SectionFlourish />
               </h2>
               <ResearchEntries
                 entries={papers.filter(
@@ -390,7 +391,7 @@ export function Research() {
                 id="fellowships-programs"
                 className={`scroll-mt-10 ${heading}`}
               >
-                Fellowships & Honors
+                Fellowships & Honors<SectionFlourish />
               </h2>
               <ul className="mt-6 space-y-5">
                 {papers
@@ -418,7 +419,7 @@ export function Research() {
                   id="selected-projects"
                   className={`scroll-mt-10 ${heading}`}
                 >
-                  Selected Projects
+                  Selected Projects<SectionFlourish />
                 </h2>
                 {/* <p className="font-mono text-xs">
                   <TextLink href="/projects" arrow>

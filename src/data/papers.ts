@@ -139,7 +139,7 @@ export const papers: Paper[] = [
     id: 'paper-7',
     format: 'Journal article',
     title:
-      '“Shielding Choice in Silence: The Women’s Escort Service in Providence (1980s–1990s)”',
+      'Shielding Choice in Silence: The Women’s Escort Service in Providence (1980s–1990s)',
     detail: 'Maja Mishevska',
     venues: [{ label: 'Brown History Journal, The Journey Issue · Vol. XVII, No. 1' }],
     // description: 'Draws on oral histories and archives to show how Brown’s Women’s Escort Service supported abortion access through non-confrontational activism.',
