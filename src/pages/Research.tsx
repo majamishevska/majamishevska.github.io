@@ -125,6 +125,7 @@ function ResearchEntries({ entries }: { entries: Paper[] }) {
                   ) : (
                     paper.detailEmphasis
                   )}
+                  {paper.detailEmphasisSuffix}
                 </p>
               )}
               {paper.venues && (
@@ -134,9 +135,11 @@ function ResearchEntries({ entries }: { entries: Paper[] }) {
                       {(paper.venues?.length ?? 0) > 1 && (
                         <span aria-hidden="true">• </span>
                       )}
+                      {venue.prefix}
                       {venue.href ? (
                         <TextLink href={venue.href}>{venue.label}</TextLink>
                       ) : venue.label}
+                      {venue.suffix}
                     </li>
                   ))}
                 </ul>
@@ -146,6 +149,13 @@ function ResearchEntries({ entries }: { entries: Paper[] }) {
           {paper.description && (
             <p className="mt-3 font-mono text-[12px] leading-relaxed text-neutral-800 sm:text-[13px]">
               {paper.description}
+            </p>
+          )}
+          {paper.mention && (
+            <p className="mt-2 font-mono text-[12px] leading-relaxed text-neutral-700 sm:text-[13px]">
+              {paper.mention.prefix}
+              <TextLink href={paper.mention.href}>{paper.mention.label}</TextLink>
+              {paper.mention.suffix}
             </p>
           )}
         </li>
@@ -211,9 +221,7 @@ export function Research() {
                     Center for Technological Responsibility <span className="whitespace-nowrap">(<InlineLogo name="cntr" side="left" />CNTR)</span>
                   </TextLink>. I’ve
                   also been a Teaching Assistant for{" "}
-                  <TextLink href="https://cs.brown.edu/courses/info/csci1302/">
-                    CSCI1302
-                  </TextLink>{" "}
+                  <em>CS1302: Sociotechnical Approaches to AI and HCI</em>{" "}
                   for four semesters (half of my time at college)! I’m pursuing a
                   BS in Computer Science and a BA in Gender and Sexuality
                   Studies at Brown University, always finding ways to put the two{" "}
@@ -342,8 +350,9 @@ export function Research() {
                   aria-label={label}
                   title={label}
                   data-cursor-label="open"
-                  className="inline-flex h-7 w-7 items-center justify-center border border-black text-black transition-colors duration-200 hover:bg-[#e4e8dc] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black"
+                  className={`inline-flex h-7 items-center justify-center border border-black text-black transition-colors duration-200 hover:bg-[#e4e8dc] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black ${label === "Resume" ? "gap-2 px-2 font-mono text-[11px] tracking-[0.08em]" : "w-7"}`}
                 >
+                  {label === "Resume" && <span>RESUME</span>}
                   {icon}
                 </a>
               ))}

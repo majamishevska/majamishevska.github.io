@@ -6,12 +6,14 @@ export type Paper = {
   titleSuffix?: string;
   detail?: string;
   description?: string;
+  mention?: { prefix: string; label: string; href: string; suffix?: string };
   contributors?: { name: string; href?: string }[];
   detailEmphasis?: string;
   detailEmphasisHref?: string;
+  detailEmphasisSuffix?: string;
   format?: string;
   topic?: string;
-  venues?: { label: string; href?: string }[];
+  venues?: { label: string; href?: string; prefix?: string; suffix?: string }[];
   year: string;
   href?: string;
   cursorLabel?: string;
@@ -26,7 +28,9 @@ export const papers: Paper[] = [
       "Prompting Without Consent: Gendered Practices of AI-Generated Intimate Imagery on X",
     detail: "Maja Mishevska",
     detailEmphasis:
-      "Steinhaus/Zisson Research Grant awarded by the Pembroke Center for Teaching and Research on Women at Brown University",
+      "Steinhaus/Zisson Research Grant",
+    detailEmphasisSuffix:
+      " awarded by the Pembroke Center for Teaching and Research on Women at Brown University",
     detailEmphasisHref:
       "https://pembroke.brown.edu/funding-opportunities/steinhauszisson-pembroke-center-research-grants-undergraduate-and-graduate",
     year: "Forthcoming",
@@ -38,8 +42,9 @@ export const papers: Paper[] = [
     year: "Forthcoming",
     venues: [
       {
+        prefix: "Key findings from the ",
         label:
-          "Key findings from the 2026 inaugural AI & Gender-Based Harms Conference: Implications for Policy and Practice",
+          "2026 inaugural AI & Gender-Based Harms Conference: Implications for Policy and Practice",
         href: "https://cs.brown.edu/news/2026/07/14/diana-freed-co-founds-the-inaugural-ai-gender-based-harms-implications-for-policy-and-practice-conference/",
       },
     ],
@@ -49,6 +54,12 @@ export const papers: Paper[] = [
     topic: "AI-generated abuse",
     category: "resource",
     title: "NCII Ecosystem",
+    mention: {
+      prefix: "Featured in ",
+      label: "Brown CNTR News",
+      href: "https://cntr.brown.edu/news/2026-10-30/aig-ncii-ecosystem",
+      suffix: ".",
+    },
     detail: "Michelle L. Ding, Haya Bugshan, and Maja Mishevska",
     contributors: [
       { name: "Michelle L. Ding", href: "https://michelle-ding.github.io/" },
@@ -68,6 +79,12 @@ export const papers: Paper[] = [
     topic: "Policy research",
     category: "resource",
     title: "Impact Afghanistan",
+    mention: {
+      prefix: "Presented the platform’s architecture and AI-assisted research pipeline at ",
+      label: "Embracing Digital Scholarship to Impact Afghanistan",
+      href: "https://impactafghanistan.brown.edu/documents/csw-70-event.pdf",
+      suffix: ", an NGO/CSW70 parallel event during the 70th Session of the United Nations Commission on the Status of Women, March 12, 2026.",
+    },
     titleSuffix: "UTRA Fellowship",
     detail: "Product team",
     description:
