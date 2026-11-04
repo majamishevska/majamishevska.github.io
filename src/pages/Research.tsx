@@ -155,6 +155,14 @@ function ResearchEntries({ entries }: { entries: Paper[] }) {
             <p className="mt-2 font-mono text-[12px] leading-relaxed text-neutral-700 sm:text-[13px]">
               {paper.mention.prefix}
               <TextLink href={paper.mention.href}>{paper.mention.label}</TextLink>
+              {paper.mention.additionalLink && (
+                <>
+                  {" and "}
+                  <TextLink href={paper.mention.additionalLink.href}>
+                    {paper.mention.additionalLink.label}
+                  </TextLink>
+                </>
+              )}
               {paper.mention.suffix}
             </p>
           )}

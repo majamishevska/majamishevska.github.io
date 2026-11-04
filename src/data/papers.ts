@@ -6,7 +6,13 @@ export type Paper = {
   titleSuffix?: string;
   detail?: string;
   description?: string;
-  mention?: { prefix: string; label: string; href: string; suffix?: string };
+  mention?: {
+    prefix: string;
+    label: string;
+    href: string;
+    additionalLink?: { label: string; href: string };
+    suffix?: string;
+  };
   contributors?: { name: string; href?: string }[];
   detailEmphasis?: string;
   detailEmphasisHref?: string;
@@ -27,8 +33,7 @@ export const papers: Paper[] = [
     title:
       "Prompting Without Consent: Gendered Practices of AI-Generated Intimate Imagery on X",
     detail: "Maja Mishevska",
-    detailEmphasis:
-      "Steinhaus/Zisson Research Grant",
+    detailEmphasis: "Steinhaus/Zisson Research Grant",
     detailEmphasisSuffix:
       " awarded by the Pembroke Center for Teaching and Research on Women at Brown University",
     detailEmphasisHref:
@@ -56,8 +61,12 @@ export const papers: Paper[] = [
     title: "NCII Ecosystem",
     mention: {
       prefix: "Featured in ",
-      label: "Brown CNTR News",
+      label: "CNTR News",
       href: "https://cntr.brown.edu/news/2026-10-30/aig-ncii-ecosystem",
+      additionalLink: {
+        label: "Brown CS News",
+        href: "https://blog.cs.brown.edu/2026/11/04/cntrs-new-interactive-website-maps-the-tech-ecosystem-behind-deepfake-abuse/",
+      },
       suffix: ".",
     },
     detail: "Michelle L. Ding, Haya Bugshan, and Maja Mishevska",
@@ -80,10 +89,12 @@ export const papers: Paper[] = [
     category: "resource",
     title: "Impact Afghanistan",
     mention: {
-      prefix: "Presented the platform’s architecture and AI-assisted research pipeline at ",
+      prefix:
+        "Presented the platform’s architecture and AI-assisted research pipeline at ",
       label: "Embracing Digital Scholarship to Impact Afghanistan",
       href: "https://impactafghanistan.brown.edu/documents/csw-70-event.pdf",
-      suffix: ", an NGO/CSW70 parallel event during the 70th Session of the United Nations Commission on the Status of Women, March 12, 2026.",
+      suffix:
+        ", an NGO/CSW70 parallel event during the 70th Session of the United Nations Commission on the Status of Women, March 12, 2026.",
     },
     titleSuffix: "UTRA Fellowship",
     detail: "Product team",
