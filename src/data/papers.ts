@@ -10,7 +10,7 @@ export type Paper = {
     prefix: string;
     label: string;
     href: string;
-    additionalLink?: { label: string; href: string };
+    additionalLinks?: { label: string; href: string }[];
     suffix?: string;
   };
   contributors?: { name: string; href?: string }[];
@@ -63,10 +63,13 @@ export const papers: Paper[] = [
       prefix: "Featured in ",
       label: "CNTR News",
       href: "https://cntr.brown.edu/news/2026-10-30/aig-ncii-ecosystem",
-      additionalLink: {
+      additionalLinks: [{
         label: "Brown CS News",
         href: "https://blog.cs.brown.edu/2026/11/04/cntrs-new-interactive-website-maps-the-tech-ecosystem-behind-deepfake-abuse/",
-      },
+      }, {
+        label: "EurekAlert!",
+        href: "https://www.eurekalert.org/news-releases/1151148",
+      }],
       suffix: ".",
     },
     detail: "Michelle L. Ding, Haya Bugshan, and Maja Mishevska",

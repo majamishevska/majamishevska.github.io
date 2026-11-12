@@ -1,6 +1,7 @@
 import { SectionFlourish } from "../components/SectionFlourish";
 import threePtIcon from "../assets/case-study/3pt/case-study/3pt-mono-logo.svg";
 import districtSixIcon from "../assets/case-study/d6/d6-logo.png";
+import bprIcon from "../assets/brand/bpr-mark.svg";
 import { InlineLogo } from "../components/InlineLogo";
 import { Fragment, type ReactNode } from "react";
 import { FileText, Moon } from "lucide-react";
@@ -17,11 +18,13 @@ const copy =
 const projectIcons: Record<string, string> = {
   "privacy-period-tracker": threePtIcon,
   "design-system": districtSixIcon,
+  "brown-political-review": bprIcon,
 };
 const projectTopics: Record<string, string> = {
   "privacy-period-tracker": "Privacy",
   "health-companion": "Web design",
   "design-system": "Civic tech",
+  "brown-political-review": "Web design",
 };
 
 function TextLink({
@@ -155,14 +158,14 @@ function ResearchEntries({ entries }: { entries: Paper[] }) {
             <p className="mt-2 font-mono text-[12px] leading-relaxed text-neutral-700 sm:text-[13px]">
               {paper.mention.prefix}
               <TextLink href={paper.mention.href}>{paper.mention.label}</TextLink>
-              {paper.mention.additionalLink && (
-                <>
-                  {" and "}
-                  <TextLink href={paper.mention.additionalLink.href}>
-                    {paper.mention.additionalLink.label}
+              {paper.mention.additionalLinks?.map((link, index, links) => (
+                <Fragment key={link.href}>
+                  {index === links.length - 1 ? ", and " : ", "}
+                  <TextLink href={link.href}>
+                    {link.label}
                   </TextLink>
-                </>
-              )}
+                </Fragment>
+              ))}
               {paper.mention.suffix}
             </p>
           )}
@@ -447,6 +450,19 @@ export function Research() {
               <ul className={`mt-6 space-y-3 ${copy}`}>
                 {sampleProjects
                   .filter((project) => project.id !== "maps-experiment")
+                  .flatMap((project) =>
+                    project.id === "design-system"
+                      ? [
+                          {
+                            id: "brown-political-review",
+                            title: "Brown Political Review",
+                            href: "https://www.brownpoliticalreview.org/",
+                            year: 2026,
+                          },
+                          project,
+                        ]
+                      : [project],
+                  )
                   .map((project) => (
                     <li
                       key={project.id}
