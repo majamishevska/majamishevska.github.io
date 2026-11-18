@@ -67,8 +67,8 @@ export const papers: Paper[] = [
         label: "Brown CS News",
         href: "https://blog.cs.brown.edu/2026/11/04/cntrs-new-interactive-website-maps-the-tech-ecosystem-behind-deepfake-abuse/",
       }, {
-        label: "EurekAlert!",
-        href: "https://www.eurekalert.org/news-releases/1151148",
+        label: "Brown News",
+        href: "https://www.brown.edu/news/2026-11-09/ai-deepfake-legislation",
       }],
       suffix: ".",
     },

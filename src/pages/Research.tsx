@@ -8,24 +8,38 @@ import { FileText, Moon } from "lucide-react";
 import { WorldOfText } from "../components/WorldOfText";
 import { documents } from "../data/documents";
 import { papers, type Paper } from "../data/papers";
-import { sampleProjects } from "../data/projects";
 import { bowAscii } from "../data/ascii";
 
 const heading =
   "font-sans text-base font-semibold leading-tight tracking-tight text-black sm:text-lg";
 const copy =
   "font-mono text-[13px] leading-relaxed text-neutral-800 sm:text-sm";
-const projectIcons: Record<string, string> = {
-  "privacy-period-tracker": threePtIcon,
-  "design-system": districtSixIcon,
-  "brown-political-review": bprIcon,
-};
-const projectTopics: Record<string, string> = {
-  "privacy-period-tracker": "Privacy",
-  "health-companion": "Web design",
-  "design-system": "Civic tech",
-  "brown-political-review": "Web design",
-};
+const selectedProjects = [
+  {
+    title: "District 6 Civic Resources",
+    href: "/pit-ne",
+    topic: "Civic tech",
+    icon: districtSixIcon,
+  },
+  {
+    title: "Brown Political Review",
+    href: "https://www.brownpoliticalreview.org/",
+    topic: "Web design",
+    icon: bprIcon,
+  },
+  {
+    title: "3PT Period Tracker",
+    href: "/3pt",
+    topic: "Privacy",
+    icon: threePtIcon,
+  },
+  {
+    title: "LUNAR Lab",
+    href: "/lunar",
+    topic: "Web design",
+    icon: null,
+  },
+];
 
 function TextLink({
   href,
@@ -448,48 +462,33 @@ export function Research() {
                 </p> */}
               </div>
               <ul className={`mt-6 space-y-3 ${copy}`}>
-                {sampleProjects
-                  .filter((project) => project.id !== "maps-experiment")
-                  .flatMap((project) =>
-                    project.id === "design-system"
-                      ? [
-                          {
-                            id: "brown-political-review",
-                            title: "Brown Political Review",
-                            href: "https://www.brownpoliticalreview.org/",
-                            year: 2026,
-                          },
-                          project,
-                        ]
-                      : [project],
-                  )
-                  .map((project) => (
-                    <li
-                      key={project.id}
-                      className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-6"
-                    >
-                      <span className="min-w-0">
-                        {project.id === "health-companion" ? (
-                          <Moon
-                            aria-hidden="true"
-                            className="text-icon mr-1 h-4 w-4"
-                            fill="none"
-                          />
-                        ) : (
-                          <img
-                            src={projectIcons[project.id]}
-                            alt=""
-                            aria-hidden="true"
-                            className="text-icon mr-1 h-4 w-4 object-contain"
-                          />
-                        )}
-                        <TextLink href={project.href}>{project.title}</TextLink>
-                      </span>
-                      <span className="shrink-0 text-right text-xs text-neutral-500">
-                        {projectTopics[project.id]} · {project.year}
-                      </span>
-                    </li>
-                  ))}
+                {selectedProjects.map((project) => (
+                  <li
+                    key={project.href}
+                    className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-6"
+                  >
+                    <span className="min-w-0">
+                      {!project.icon ? (
+                        <Moon
+                          aria-hidden="true"
+                          className="text-icon mr-1 h-4 w-4"
+                          fill="none"
+                        />
+                      ) : (
+                        <img
+                          src={project.icon}
+                          alt=""
+                          aria-hidden="true"
+                          className="text-icon mr-1 h-4 w-4 object-contain"
+                        />
+                      )}
+                      <TextLink href={project.href}>{project.title}</TextLink>
+                    </span>
+                    <span className="shrink-0 text-right text-xs text-neutral-500">
+                      {project.topic}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </section>
           </div>
