@@ -69,6 +69,9 @@ export const papers: Paper[] = [
       }, {
         label: "Brown News",
         href: "https://www.brown.edu/news/2026-11-09/ai-deepfake-legislation",
+      }, {
+        label: "The Brown Daily Herald",
+        href: "https://www.browndailyherald.com/article/f1fe3e6e-f670-4f72-9525-a8d590f110e5",
       }],
       suffix: ".",
     },
