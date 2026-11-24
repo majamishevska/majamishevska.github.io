@@ -41,10 +41,10 @@ const additionalProjectCards: AdditionalProjectCard[] = [
     imageClassName: 'aspect-[5/3] object-cover object-top',
   },
   {
-    title: 'Rethinking How We Evaluate Postpartum AI',
+    title: 'Postpartum Sense-Making and AI in a Fragmented Care System',
     year: '2026',
     tags: ['CSCW', 'AI RESEARCH'],
-    href: 'https://cs.brown.edu/news/2026/10/16/strong-representation-at-cscw-shows-brown-cs-impact-in-social-computing-and-human-computer-interaction/',
+    href: 'https://arxiv.org/abs/2611.28870',
     image: postpartumAiPreview,
   },
   {

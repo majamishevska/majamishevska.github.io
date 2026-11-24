@@ -123,14 +123,14 @@ export const papers: Paper[] = [
   {
     id: "paper-postpartum-ai-2026",
     format: "Workshop paper and presentation",
-    title: "Rethinking How We Evaluate Postpartum AI",
-    detail: "Maja Mishevska and Diana Freed",
-    // description: 'Argues for evaluating postpartum AI within fragmented care systems, examining how it shapes women’s navigation of advice and responsibility for seeking care.',
+    title: "Postpartum Sense-Making and AI in a Fragmented Care System",
+    href: "https://arxiv.org/abs/2611.28870",
+    detail: "Diana Freed and Maja Mishevska",
     venues: [
       {
         label:
-          "29th ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW)",
-        href: "https://cscw.acm.org/2026/",
+          "CSCW 2026 Workshop on Women's Health as Cooperative Work: Participatory AI Across Care, Community, and Policy",
+        href: "https://arxiv.org/abs/2611.03776",
       },
     ],
     year: "2026",
